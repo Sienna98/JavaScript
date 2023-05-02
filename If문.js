@@ -12,9 +12,9 @@ if (userNumber === 0) {
 // 문제 2
 // 나는 대학교 교수다. 레포트 점수에따라 등급을 매기는 프로그램을 만드시오
 let userScore = 99;
-if (userScore >= 90) {
+if (userScore >= 90 && userScore < 100) {
   console.log("A");
-} else if (userScore <= 89 && userScore >= 80) {
+} else if (80 <= userScore && userScore <= 89) {
   console.log("B");
 } else if (userScore <= 79 && userScore >= 70) {
   console.log("C");

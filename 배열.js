@@ -118,7 +118,7 @@ animals.push("Mosquito", "Mouse", "Mule");
 // console.log(animals.includes("Cat"));
 
 //"Red deer"을 "Deer"로 바꾸시오
-animals.splice(animals.indexOf("Red deer"), 1, "Deer");
+animals.splice(animals.indexOf("Red deer"), 1, "Deer", "Sieun");
 // console.log(animals);
 
 //"Spider"부터 3개의 아이템을 기존 어레이에서 제거하시오
@@ -134,4 +134,6 @@ let newAnimals = animals.slice(
   animals.indexOf("Baboon"),
   animals.indexOf("Bison") + 1
 );
-// console.log(newAnimals);
+console.log(newAnimals);
+const startWithBArr = animals.filter((animal) => animal.startsWith("B"));
+console.log(startWithBArr);
