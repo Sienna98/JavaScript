@@ -42,7 +42,7 @@ function meetAt(year, month, date) {
     return `${theYear}년`;
   }
 }
-let today = meetAt(2023, 4, 30);
+let today = meetAt(2023, 4);
 console.log(today);
 
 // 문제 5
@@ -63,5 +63,26 @@ console.log(smallest);
 
 // 문제 6
 // 돈을 매개변수로 받으면 몇개의 지폐와 동전이 필요한지 최소 개수를 계산해주는 함수를 만드시오
-function bill() {}
+function bill(num) {
+  let minNumber = 0;
+  // let current = "";
+
+  // 1. 50000원 개수 구하기
+  const a = num / 50000;
+  // 50000원을 뺀 나머지 금액
+  const b = num % 50000;
+  const c = b / 10000;
+  const d = b % 10000;
+}
 bill(56720);
+
+let unit = [50000, 10000, 5000, 1000, 500, 100];
+function changeCalculate(money) {
+  for (let i = 0; i < unit.length; i++) {
+    let num = Math.floor(money / unit[i]);
+    console.log(unit[i] + "X" + num);
+    money = money - unit[i] * num;
+  }
+}
+
+changeCalculate(12300);
