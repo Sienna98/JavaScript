@@ -25,7 +25,7 @@ function render() {
   let list = [];
   if (mode == "all") {
     list = taskList;
-  } else if (mode == "onGoing" || "done") {
+  } else {
     list = filterList;
   }
   let resultHTML = "";
@@ -72,7 +72,14 @@ function deleteTask(id) {
   console.log(taskList);
 }
 function filter(ev) {
-  mode = ev.target.id;
+  if (ev) {
+    mode = ev.target.id;
+    for (let i = 0; i < tabs.length; i++) {
+      tabs[i].classList.remove("under_line");
+    }
+    ev.target.classList.add("under_line");
+  }
+
   filterList = [];
   if (mode == "all") {
     render();
@@ -82,15 +89,14 @@ function filter(ev) {
         filterList.push(taskList[i]);
       }
     }
-    render();
   } else if (mode == "done") {
     for (let i = 0; i < taskList.length; i++) {
-      if (taskList[i].isComplete == true) {
+      if (taskList[i].isComplete) {
         filterList.push(taskList[i]);
       }
     }
-    render();
   }
+  render();
   console.log(filterList);
 }
 function randomIdGenerate() {
