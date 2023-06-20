@@ -89,7 +89,7 @@ function filter(ev) {
         filterList.push(taskList[i]);
       }
     }
-  } else if (mode == "done") {
+  } else if (mode == "Done") {
     for (let i = 0; i < taskList.length; i++) {
       if (taskList[i].isComplete) {
         filterList.push(taskList[i]);
